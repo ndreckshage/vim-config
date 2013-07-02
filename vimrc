@@ -1,3 +1,12 @@
+" handles pc (gvim + cygwin) v mac
+if has("gui_win32")
+  let s:config_prefix = $HOME . '\vim\'
+elseif has("win32unix")
+  let s:config_prefix = $HOME . '/vim/'
+else
+  let s:config_prefix = '~/.vim/'
+endif
+
 " not compatible w vi
 set nocompatible
 
@@ -14,6 +23,6 @@ syntax on
 filetype plugin indent on
 
 " load additional config files
-for f in sort(split(glob('~/.vim/config/*.vim'), '\n'))
+for f in sort(split(glob(s:config_prefix . '/config/*.vim'), '\n'))
   execute 'source ' . f
 endfor
