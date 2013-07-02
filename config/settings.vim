@@ -1,5 +1,11 @@
 """""""""" USE
 
+" not compatible w vi
+set nocompatible
+" utf8
+set encoding=utf-8
+" filetype handling
+filetype plugin indent on
 " change files without saving
 set hidden
 " ignore cases when searching, except when capitals
@@ -24,6 +30,18 @@ set ruler
 set title
 " dont wrap text
 set nowrap
+
+"""""""""" TEXT
+
+syntax enable
+if has('gui_running')
+  set guifont=Lucida_Console:h9
+  set background=dark
+  colorscheme solarized
+  set showtabline=2
+  set guioptions-=m
+  set guioptions-=T
+endif
 
 """""""""" INDENTING
 
