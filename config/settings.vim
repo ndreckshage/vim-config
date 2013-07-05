@@ -15,6 +15,8 @@ set incsearch
 " watch extra space
 highlight RedundantSpaces ctermbg=yellow
 match RedundantSpaces /\s\+$\|[^\t]\zs\t\+\|\t\zs \+/
+" plugins
+filetype plugin on
 
 """""""""" DISPLAY SETTINGS
 
