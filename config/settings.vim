@@ -37,12 +37,19 @@ set nowrap
 
 syntax enable
 if has('gui_running')
-  set guifont=Lucida_Console:h9
   set background=dark
   colorscheme solarized
   set showtabline=2
   set guioptions-=m
   set guioptions-=T
+
+  if has("gui_win32")
+    set guifont=Lucida_Console:h9
+  elseif has("gui_macvim")
+    set guifont=Menlo:h9
+  elseif has("gui_gtk")
+    set guifont=DejaVu\ Sans\ Mono
+  endif
 endif
 
 """""""""" INDENTING
